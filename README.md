@@ -46,7 +46,7 @@ sudo install -m 755 logHawk.py    /usr/local/bin/
 # 3. Verify they run
 logCapture.sh --help  # (or simply run to test)
 
-## 🛠️ Configuration
+# 🛠️ Configuration
 Both scripts are plain text—tweak paths and patterns at the top of logCapture.sh.
 
 source_log_file="/var/log/apache2/access.log"  # default source log
@@ -74,7 +74,7 @@ Immediately calls logHawk.py filtered_YYYY‑MM‑DD.log.
 logHawk.py writes report_YYYY‑MM‑DD.txt to ~/Desktop/logHawk_analysis/
 and prints its full path for easy emailing or SIEM ingestion.
 
-## 📄 Sample Report
+# 📄 Sample Report
 
 Number of occurrences of '404': 17
 Number of occurrences of '500': 3
@@ -82,7 +82,7 @@ Sorted IP addresses (most common to least):
 192.0.2.15 : 91
 203.0.113.42 : 53
 198.51.100.77 : 12
-## 🚧 Roadmap
+# 🚧 Roadmap
  Add email alert on critical findings (SMTP).
 
  Add alerts for critical findings.
