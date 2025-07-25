@@ -1,13 +1,13 @@
 #!/bin/bash
 
-#source_log_file="/var/log/apache2/access.log" # This is the source log to monitor
-source_log_file="/tmp/loghawk_lab/sample_access.log"
-#destination="/home/student/Desktop/logAnalysis" #Where to store the extracted logs
-destination="/tmp/loghawk_lab/output"
+source_log_file="/var/log/apache2/access.log" # This is the source log to monitor
+
+destination="/home/student/Desktop/logAnalysis" #Where to store the extracted logs
+
 pattern_of_interest="127\.0\.0\.1|([0-9]{1,3}\.){3}[0-9]{1,3}" #this can be whatever pattern you are interested in, in this case, a RegEx for an IP address or my localhost IP
 
 dest_file="$destination/filtered_$(date +'%Y-%m-%d').log" #This builds a destination file name; creates one file per day
-mkdir -p "$destination"
+mkdir -p "$destination" #makes directory at variable destination if that path doesn't already exist
 logHawk="/usr/local/bin/logHawk.py" #LogHawk analysis * Make sure logHawk.py is saved here
 
 # Grab the matching lines to the selected pattern of interest since the last run
